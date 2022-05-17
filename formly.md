@@ -123,24 +123,7 @@ To give an idea let me show an example of such metadata model:
 At fist glance, aside the element  "code": "aeroporto" outlining the object name ("aeroporto") as attribute of the "code" field,
 three main parts may be described :
 
-1) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
-
-    "columnDefs": [
-      {
-        "field": "code",
-        "name": "Codice"
-      },
-      {
-        "field": "description",
-        "name": "Descrizione"
-      },
-      {
-        "field": "position_geo",
-        "name": "Posizione"
-      }
-    ],
-
-2) consider here the object "properties" as metadata definition for informative content of the object; in this example the definition of the object is made by three data type: two "string" and one "geopoint" as a complex definition of member attribute "position_geo" 
+1) consider here the object "properties" as metadata definition for informative content of the object; in this example the definition of the object is made by three data type: two "string" and one "geopoint" as a complex definition of member attribute "position_geo" 
 
   "model": {
     "schema": {
@@ -180,6 +163,23 @@ In a nutshell and for few element consider the following explanation:
   "type": which kind of data is expecting, a primitive one (string, number, date,...) or a complex one (as ex. "geopoint"). In the latter, the renderig must count un the specific definition
   "enableSorting": ????
   ecc. ecc.
+
+2) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
+
+    "columnDefs": [
+      {
+        "field": "code",
+        "name": "Codice"
+      },
+      {
+        "field": "description",
+        "name": "Descrizione"
+      },
+      {
+        "field": "position_geo",
+        "name": "Posizione"
+      }
+    ],
 
   3) The section "form" is an array defining the kind of form ("type" and "tabs") and the fields sequence
 
@@ -231,3 +231,6 @@ In a nutshell and for few element consider the following explanation:
   "type" the kind of rendering in the form
   "key" the object model in the form, the variable holding the field value
   "required" self explanatory
+
+
+![Getting Started](./previewAeroporto.jpg)
