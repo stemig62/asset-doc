@@ -7,7 +7,7 @@ Actually forms models are based on JSON object coarsely shown in the following.
 This is  a simple example structure persisted on backend server database and used as a template every time pages need to show a model to the user as, in example, to render a grid, a CRUD form or a search one. This structure is used as a metadata scaffolding the render context and as JSON structure persisting in NOSQL database where the metadata are connected to form data content and, later, used conversely when this informative content is going to be retrieved for presentation.
 
 To give an idea let me show an example of such metadata model:
-
+```
 {
   "dataOut": null,
   "schemaVersion": null,
@@ -119,12 +119,14 @@ To give an idea let me show an example of such metadata model:
   "customer": null,
   "parents": null
 }
+```
 
 At fist glance, aside the element  "code": "aeroporto" outlining the object name ("aeroporto") as attribute of the "code" field,
 three main parts may be described :
 
 1) consider here the object "properties" as metadata definition for informative content of the object; in this example the definition of the object is made by three data type: two "string" and one "geopoint" as a complex definition of member attribute "position_geo" 
 
+```
   "model": {
     "schema": {
       "type": "object",
@@ -154,6 +156,7 @@ three main parts may be described :
       ]
     },
     .........
+```
 
 In a nutshell and for few element consider the following explanation:
 
@@ -166,6 +169,7 @@ In a nutshell and for few element consider the following explanation:
 
 2) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
 
+```
     "columnDefs": [
       {
         "field": "code",
@@ -180,9 +184,10 @@ In a nutshell and for few element consider the following explanation:
         "name": "Posizione"
       }
     ],
-
+```
   3) The section "form" is an array defining the kind of form ("type" and "tabs") and the fields sequence
 
+```
   ....
     "code": "aeroporto",
     "form": [
@@ -226,11 +231,12 @@ In a nutshell and for few element consider the following explanation:
       }
     ],
 .....
-
+```
   "title" as the field label
   "type" the kind of rendering in the form
   "key" the object model in the form, the variable holding the field value
   "required" self explanatory
 
-
+```
 ![Getting Started](./previewAeroporto.jpg)
+```
