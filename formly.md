@@ -1,10 +1,11 @@
 **Formly**
 
-Probably this open source component will be used in building forms. Component description can be found [at:](https://formly.dev/guide/getting-started).
+Probably this open source component will be used in building forms. Component description can be found at: 
+> - <https://formly.dev/guide/getting-started>.
 
-Actually forms models are based on JSON object coarsely shown in the following.
+Forms models are based on JSON object coarsely shown in the following.
 
-This is  a simple example structure persisted on backend server database and used as a template every time pages need to show a model to the user as, in example, to render a grid, a CRUD form or a search one. This structure is used as a metadata scaffolding the render context and as JSON structure persisting in NOSQL database where the metadata are connected to form data content and, later, used conversely when this informative content is going to be retrieved for presentation.
+This is  a simple example structure persisted on backend server database and used as a template every time pages need to show a model to the user as, in example, to render a grid, a CRUD form or a search one. This structure is going to be used in rendering as explained below.
 
 To give an idea let me show an example of such metadata model:
 ```
@@ -160,12 +161,12 @@ three main parts may be described :
 
 In a nutshell and for few element consider the following explanation:
 
-  "enableFiltering": if true can be used in filtering
-  "check": ?????
-  "title": label over form explainig the required data
-  "type": which kind of data is expecting, a primitive one (string, number, date,...) or a complex one (as ex. "geopoint"). In the latter, the renderig must count un the specific definition
-  "enableSorting": ????
-  ecc. ecc.
+> - "enableFiltering": if true can be used in filtering
+> - "check": ?????
+> - "title": label over form explainig the required data
+> - "type": which kind of data is expecting, a primitive one (string, number, date,...) or a complex one (as ex. "geopoint"). In the latter, the renderig must count un the specific definition
+> - "enableSorting": ????
+> - ecc. ecc.
 
 2) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
 
@@ -232,9 +233,71 @@ In a nutshell and for few element consider the following explanation:
     ],
 .....
 ```
-  "title" as the field label
-  "type" the kind of rendering in the form
-  "key" the object model in the form, the variable holding the field value
-  "required" self explanatory
+> -  "title" as the field label
+> -  "type" the kind of rendering in the form
+> -  "key" the object model in the form, the variable holding the field value
+> -  "required" self explanatory
 
-![Getting Started](./previewAeroporto.jpg)
+![example](./previewAeroporto.jpg)
+
+
+
+
+
+*******************************
+configuration
+
+"commissionDependent": true,
+"attachmentManagement": true,
+"withConsumptive": true,
+"calendarManagement": true,
+"formLockedByDefault": true,
+"treeTab": true,
+"relatedPlan": true,
+"attachmentRequired": true,
+"parentAttachments": true,
+
+
+*******************************
+
+
+
+*******************************
+upper part form
+
+*******************************
+
+
+*******************************
+Template export
+
+*******************************
+
+
+*******************************
+Template QRCODE
+
+*******************************
+
+
+*******************************
+test part
+
+
+      ********************
+      preview
+      ********************
+
+      ********************
+      schema building
+      ********************
+
+      ********************
+      form scheleton
+      ********************
+
+
+*******************************
+
+
+
