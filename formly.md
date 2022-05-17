@@ -1,10 +1,12 @@
 **Formly**
 
-Il componete Formly è documentato : [qui](https://formly.dev/guide/getting-started).
+Probably this open source component will be used in building forms. Component description can be found [at:](https://formly.dev/guide/getting-started).
 
-La modellazione corrente, descritta in seguito deve essere usata per adattarsi al componente.
+Actually forms models are based on JSON object coarsely shown in the following.
 
-per una semplice form, il modello è costituito da questa struttura
+This is  a simple example structure persisted on backend server database and used as a template every time pages need to show a model to the user as, in example, to render a grid, a CRUD form or a search one. This structure is used as a metadata scaffolding the render context and as JSON structure persisting in NOSQL database where the metadata are connected to form data content and, later, used conversely when this informative content is going to be retrieved for presentation.
+
+To give an idea let me show an example of such metadata model:
 
 {
   "dataOut": null,
@@ -118,9 +120,10 @@ per una semplice form, il modello è costituito da questa struttura
   "parents": null
 }
 
-dove, al di là degli auto esplicativi nome di campo, troviamo tre strutture:
+At fist glance, aside the element  "code": "aeroporto" outlining the object name ("aeroporto") as attribute of the "code" field,
+three main parts may be described :
 
-1) la definizione delle intestazioni delle colonne della tabella di filtro:
+1) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
 
     "columnDefs": [
       {
@@ -137,19 +140,13 @@ dove, al di là degli auto esplicativi nome di campo, troviamo tre strutture:
       }
     ],
 
-in cui:
-"field" indica il metadato della variabile che indica un generico codice
-"name" il titolo dell'intestazione
+2) consider here the object "properties" as metadata definition for informative content of the object; in this example the definition of the object is made by three data type: two "string" and one "geopoint" as a complex definition of member attribute "position_geo" 
 
-2) gli attributi che descrivono il tipo di oggetto nominato in "description" sono descritti nella sezione "properties"
-( )
-
-    "description": "Aeroporto",
-    "history": true,
-    "drawingManagement": true,
-    "columndefsCommission": "1900013",
-    "columnDefs": [
-     "properties": {
+  "model": {
+    "schema": {
+      "type": "object",
+      "title": "",
+      "properties": {
         "code": {
           "check": true,
           "title": "Codice",
@@ -168,3 +165,69 @@ in cui:
           "type": "string"
         }
       },
+      "required": [
+        "code",
+        "description"
+      ]
+    },
+    .........
+
+In a nutshell and for few element consider the following explanation:
+
+  "enableFiltering": if true can be used in filtering
+  "check": ?????
+  "title": label over form explainig the required data
+  "type": which kind of data is expecting, a primitive one (string, number, date,...) or a complex one (as ex. "geopoint"). In the latter, the renderig must count un the specific definition
+  "enableSorting": ????
+  ecc. ecc.
+
+  3) The section "form" is an array defining the kind of form ("type" and "tabs") and the fields sequence
+
+  ....
+    "code": "aeroporto",
+    "form": [
+      {
+        "type": "fieldset",
+        "items": [
+          {
+            "tabs": [
+              {
+                "title": "Dati Base",
+                "items": [
+                  {
+                    "title": "Codice",
+                    "type": "text",
+                    "key": [
+                      "code"
+                    ],
+                    "required": true
+                  },
+                  {
+                    "title": "Descrizione",
+                    "type": "text",
+                    "key": [
+                      "description"
+                    ],
+                    "required": true
+                  },
+                  {
+                    "title": "Posizione",
+                    "type": "geopoint",
+                    "key": [
+                      "position_geo"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "type": "tabs"
+          }
+        ]
+      }
+    ],
+.....
+
+  "title" as the field label
+  "type" the kind of rendering in the form
+  "key" the object model in the form, the variable holding the field value
+  "required" self explanatory
