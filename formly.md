@@ -241,16 +241,17 @@ In a nutshell and for few element consider the following explanation:
 ![example](./previewAeroporto.jpg)
 
 
-![Form upper side](./upperPartForm.jpg)
 
 
 *******************************
+![Form upper side](./upperPartForm.jpg)
 upper part form
 
 *******************************
 
 
 *******************************
+![Form upper side](./configurationPartForm.jpg)
 configuration
 
 "commissionDependent": true,
@@ -268,17 +269,32 @@ configuration
 
 
 
+*******************************
+![Form expanding panels section](./expandingPanelsPartForm.jpg)
+expanding
 
 *******************************
-Template export
+
+
+*******************************
+![Form advanced section](./advancedPartForm.jpg)
+
+
+*******************************
+
+*******************************
+![Form export section](./exportPartForm.jpg)
+
+
+*******************************
+
+*******************************
+![Form template QR code](./qrCodePartForm.jpg)
+
 
 *******************************
 
 
-*******************************
-Template QRCODE
-
-*******************************
 
 
 *******************************
@@ -286,15 +302,15 @@ test part
 
 
       ********************
-      preview
+![Form preview](./previewPartForm.jpg)
       ********************
 
       ********************
-      schema building
+![Form schema](./schemaPartForm.jpg)
       ********************
 
       ********************
-      form scheleton
+![Form configuration](./editFormConfigurationPartForm.jpg)
       ********************
 
 
