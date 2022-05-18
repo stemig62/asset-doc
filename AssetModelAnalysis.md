@@ -1,10 +1,5 @@
 # Editing models form
  
- **Formly way**
-
-Probably this open source component will be used in building forms. Component description can be found at: 
-> - <https://formly.dev/guide/getting-started>.
-
 ## Model analisys
 
 Forms models are based on JSON object coarsely shown in the following.
@@ -166,10 +161,10 @@ three main parts may be described :
 In a nutshell and for few element consider the following explanation:
 
 > - "enableFiltering": if true can be used in filtering
-> - "check": ?????
+> - "check": [??????]
 > - "title": label over form explainig the required data
 > - "type": which kind of data is expecting, a primitive one (string, number, date,...) or a complex one (as ex. "geopoint"). In the latter, the renderig must count un the specific definition
-> - "enableSorting": ????
+> - "enableSorting": [??????]
 > - ecc. ecc.
 
 2) "columnDefs" as array of JSON objects defining the field name ("field") and the label ("name") and used in rendering the grid header:
@@ -242,17 +237,56 @@ In a nutshell and for few element consider the following explanation:
 > -  "key" the object model in the form, the variable holding the field value
 > -  "required" self explanatory
 
+***
+
+## Filter and search form 
+![Starting nav menù](./menu.jpg)
+![Filter Form](./filter.jpg)
+
+### Tag filter
+
+
+### Header filters
+
+### Further filters
+
+***
+
 ## CRUD and options: current form layout 
 
 ### whole form view
 
 ![example](./previewAeroporto.jpg)
 
-The sketch above shows an example layout of an editing form dedicated to an object model; each section is going to explain in following sections
+The sketch above shows an example layout of an editing form dedicated to an object model; each section is going to explain in following sections. 
+Any new model have to be created by scratch starting from the default JSON data structure outlined in **Notes**  point **1**.
 
 **1. Form upper side:**
 
 ![Form upper side](./upperPartForm.jpg)
+
+**here goes the default from the start-->**
+...
+...
+"columndefsCrossCommission": false,
+	"UUID": "aeroporto",
+	"dataIn": "2022-04-24T22:00:00.000Z",
+	"dataOut": "2022-06-04T22:00:00.000Z",
+	"tags": [
+		"bah"
+	]
+**here terminating closing bracket-->}**
+
+| **Label on form**                   | **JSON field**        |
+|-------------------------------------|-----------------------|
+| version(by code, no user input)     | version               |
+| UUID                                | UUID                  |
+| Inizio validità                     | dataIn                |
+| Fine validità:                      | dataOut               |
+| tag                                 | tags[]                |
+| Tipo                                | model.code            |
+| Descrizione                         | model.description     |
+
 
 
 **2. Form configuration side**
@@ -260,27 +294,61 @@ The sketch above shows an example layout of an editing form dedicated to an obje
 ![Form upper side](./configurationPartForm.jpg)
 configuration
 
-"commissionDependent": true,
-"attachmentManagement": true,
-"withConsumptive": true,
-"calendarManagement": true,
-"formLockedByDefault": true,
-"treeTab": true,
-"relatedPlan": true,
-"attachmentRequired": true,
-"parentAttachments": true,
+| **Label on form**      | **JSOM field**      |
+|------------------------|---------------------|
+| Dipendente da commessa | commissionDependent |
+| Gestione calendario    | calendarManagement  |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+
+***
 
 **3. Form expanding panel**
 ![Form expanding panels section](./expandingPanelsPartForm.jpg)
 
+| **Label on form**      | **JSOM field**      |
+|------------------------|---------------------|
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+
 **3.1 Form advanced section**
 ![Form advanced section](./advancedPartForm.jpg)
+
+| **Label on form**      | **JSOM field**      |
+|------------------------|---------------------|
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
 
 **3.2 Form export template**
 ![Form export section](./exportPartForm.jpg)
 
+| **Label on form**      | **JSOM field**      |
+|------------------------|---------------------|
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+
 **3.3 Form QR code template**
 ![Form template QR code](./qrCodePartForm.jpg)
+
+| **Label on form**      | **JSOM field**      |
+|------------------------|---------------------|
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
+|                        |                     |
 
 **4. Form setup template**
 
@@ -293,19 +361,94 @@ configuration
 **4.3 Form layout**
 ![Form preview](./editFormConfigurationPartForm.jpg)
 
+***
 
+## Tree modelling
+![Starting nav menù](./menuTree.jpg)
 
-## Filter and search form 
-![Starting nav menù](./menu.jpg)
-![Filter Form](./filter.jpg)
+***
 
-### Tag filter
+## Model importing 
+![Starting nav menù](./menuImport.jpg)
 
-### Header filters
-
-### Further filters
-
-
+# Notes:
+**1.starting scratch default structure on new model appending** 
+```
+{
+	"model": {
+		"schema": {
+			"type": "object",
+			"title": "",
+			"properties": {
+				"code": {
+					"title": "Codice",
+					"type": "string",
+					"check": true,
+					"enableFiltering": true,
+					"enableSorting": true
+				},
+				"description": {
+					"title": "Descrizione",
+					"type": "string",
+					"check": true,
+					"enableFiltering": true,
+					"enableSorting": true
+				}
+			},
+			"required": [
+				"code",
+				"description"
+			]
+		},
+		"form": [
+			{
+				"type": "fieldset",
+				"items": [
+					{
+						"type": "tabs",
+						"tabs": [
+							{
+								"title": "Dati Base",
+								"items": [
+									{
+										"key": [
+											"code"
+										],
+										"title": "Codice",
+										"required": true,
+										"type": "text"
+									},
+									{
+										"key": [
+											"description"
+										],
+										"title": "Descrizione",
+										"required": true,
+										"type": "text"
+									}
+								]
+							}
+						]
+					}
+				],
+				"crossCommission": false
+			}
+		],
+		"reports": [],
+		"columnDefs": [
+			{
+				"field": "code",
+				"name": "Codice"
+			},
+			{
+				"field": "description",
+				"name": "Descrizione"
+			}
+		]
+	},
+	"columndefsCrossCommission": false
+}
+```
 ***
  **Formly way**
 
