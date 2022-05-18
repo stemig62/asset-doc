@@ -1,7 +1,11 @@
-**Formly**
+# Editing models form
+ 
+ **Formly way**
 
 Probably this open source component will be used in building forms. Component description can be found at: 
 > - <https://formly.dev/guide/getting-started>.
+
+## Model analisys
 
 Forms models are based on JSON object coarsely shown in the following.
 
@@ -238,19 +242,21 @@ In a nutshell and for few element consider the following explanation:
 > -  "key" the object model in the form, the variable holding the field value
 > -  "required" self explanatory
 
-******************
+## CRUD and options: current form layout 
+
+### whole form view
+
 ![example](./previewAeroporto.jpg)
-******************
 
+The sketch above shows an example layout of an editing form dedicated to an object model; each section is going to explain in following sections
 
-*******************************
+**1. Form upper side:**
+
 ![Form upper side](./upperPartForm.jpg)
-upper part form
-
-*******************************
 
 
-*******************************
+**2. Form configuration side**
+
 ![Form upper side](./configurationPartForm.jpg)
 configuration
 
@@ -264,57 +270,44 @@ configuration
 "attachmentRequired": true,
 "parentAttachments": true,
 
-
-*******************************
-
-
-
-*******************************
+**3. Form expanding panel**
 ![Form expanding panels section](./expandingPanelsPartForm.jpg)
-expanding
 
-*******************************
-
-
-*******************************
+**3.1 Form advanced section**
 ![Form advanced section](./advancedPartForm.jpg)
 
-
-*******************************
-
-*******************************
+**3.2 Form export template**
 ![Form export section](./exportPartForm.jpg)
 
-
-*******************************
-
-*******************************
+**3.3 Form QR code template**
 ![Form template QR code](./qrCodePartForm.jpg)
 
+**4. Form setup template**
 
-*******************************
-
-
-
-
-*******************************
-test part
-
-
-      ********************
+**4.1 Form preview**
 ![Form preview](./previewPartForm.jpg)
-      ********************
 
-      ********************
+**4.2 Form schema**
 ![Form schema](./schemaPartForm.jpg)
-      ********************
 
-      ********************
-![Form configuration](./editFormConfigurationPartForm.jpg)
-      ********************
-
-
-*******************************
+**4.3 Form layout**
+![Form preview](./editFormConfigurationPartForm.jpg)
 
 
 
+## Filter and search form 
+![Starting nav menù](./menu.jpg)
+![Filter Form](./filter.jpg)
+
+### Tag filter
+
+### Header filters
+
+### Further filters
+
+
+***
+ **Formly way**
+
+Probably this open source component will be used in building forms. Component description can be found at: 
+> - <https://formly.dev/guide/getting-started>.
