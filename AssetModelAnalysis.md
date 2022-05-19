@@ -294,38 +294,48 @@ Any new model have to be created by scratch starting from the default JSON data 
 ![Form upper side](./configurationPartForm.jpg)
 configuration
 
+```
+	"history": true,
+	"commissionDependent": true,
+	"calendarManagement": true,
+	"formLockedByDefault": true,
+	"treeTab": true,
+	"relatedPlan": true,
+	"attachmentManagement": true,
+	"withConsumptive": true,
+	"attachmentRequired": true,
+	"drawingManagement": true,
+	"parentAttachments": true
+```
+
 | **Label on form**      | **JSOM field**      |
 |------------------------|---------------------|
 | Dipendente da commessa | commissionDependent |
 | Gestione calendario    | calendarManagement  |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
+| Storicizzato           | history             |
+| Readonly               | formLockedByDefault |  
+| Gestione classificazioni| treeTab             |
+| Gestione calendario    | relatedPlan         |
+| Contatore a consumo    | attachmentManagement|
+| Contatore a consumo    | withConsumptive     |
+| Gestione allegati      | attachmentRequired  |
+| Gestione planimetria   | drawingManagement   |
+| Abilita allegati da tree| parentAttachments   |
 
 ***
 
 **3. Form expanding panel**
 ![Form expanding panels section](./expandingPanelsPartForm.jpg)
 
-| **Label on form**      | **JSOM field**      |
-|------------------------|---------------------|
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-
 **3.1 Form advanced section**
 ![Form advanced section](./advancedPartForm.jpg)
 
 | **Label on form**      | **JSOM field**      |
 |------------------------|---------------------|
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
+|Mostra sottonodi        |showSubnodes                     |
+|  Gestisci come listino |   priceListManagement                  |
+| Disabilita "Clona"     |   disableCloneFeature                  |
+|  Codice auto-generato     |   selfGeneratedCode": {"codeNameSix": "12345",	"active":true }    |
 |                        |                     |
 
 **3.2 Form export template**
@@ -333,22 +343,14 @@ configuration
 
 | **Label on form**      | **JSOM field**      |
 |------------------------|---------------------|
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
+|NOT DESCRIBED YET       |///////////////      |
 
 **3.3 Form QR code template**
 ![Form template QR code](./qrCodePartForm.jpg)
 
 | **Label on form**      | **JSOM field**      |
 |------------------------|---------------------|
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
-|                        |                     |
+|NOT DESCRIBED YET       |///////////////      |
 
 **4. Form setup template**
 
@@ -366,10 +368,19 @@ configuration
 ## Tree modelling
 ![Starting nav menù](./menuTree.jpg)
 
+Tree modelling is used to build, in hierarchical way, a relation between existing models in visual manner.
+The  following sketch shows a such relation example:
+
+![Starting nav menù](./treeForm.jpg)
+
+The list between the menù area and the tree view, is a list of all models currently persisted on system. Single elements can be dargged and dropped over the desired parent; the red cross on the right side is intende to delete the relation. Both tree view and list available model view must implement a filter
+
 ***
 
 ## Model importing 
 ![Starting nav menù](./menuImport.jpg)
+
+***
 
 # Notes:
 **1.starting scratch default structure on new model appending** 
